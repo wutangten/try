@@ -1,3 +1,13 @@
+/************************************************************************
+//
+//  Filename: classNumber.cpp
+//
+//  Code Description: Determine the type of the number (even, odd, zeros) and count how many of them.
+//
+//  Created by brucederland on 7/26/19.
+//
+************************************************************************/
+
 #include <iostream>
 using namespace std;
 
