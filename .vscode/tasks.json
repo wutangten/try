@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+		{
+			"label": "Build with Clang",
+			"type": "shell",
+			"command": "clang++",	//C++ uses clang++, C uses clang
+			"args": [
+				"-std=c++17",
+				"-stdlib=libc++",
+				"classNumber.cpp",
+				"-o",
+				"classNumber.out",
+				"--debug"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

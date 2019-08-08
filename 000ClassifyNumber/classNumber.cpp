@@ -11,10 +11,10 @@
 #include <iostream>
 using namespace std;
 
-const int length = 5;	/* how many input(number) to read in */
+const int length = 5; /* how many input(number) to read in */
 /* const int length = 20;	//for 20 numbers*/
 
-void initialize(int &zeros, int &odds, int &evens); /* set these counter to zero */
+void initialize(int &zeros, int &odds, int &evens);				  /* set these counter to zero */
 void classifyNumber(int num1, int &zeros, int &odds, int &evens); /* (De)increment the counter */
 
 int main(int argc, const char *argv[])
@@ -28,7 +28,7 @@ int main(int argc, const char *argv[])
 	cout << "Enter 5 integers" << endl;
 
 	/* Don't use array in this program, so use for loop */
-	for ( int i = 0; i < length; i++)
+	for (int i = 0; i < length; i++)
 	{
 		cin >> num1;
 		classifyNumber(num1, zeros, odds, evens);
@@ -43,7 +43,8 @@ int main(int argc, const char *argv[])
 	return 0;
 }
 
-void initialize(int &zeros, int &odds, int &evens){
+void initialize(int &zeros, int &odds, int &evens)
+{
 	zeros = 0;
 	odds = 0;
 	evens = 0;
