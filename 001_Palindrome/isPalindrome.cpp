@@ -2,7 +2,7 @@
 //
 //  Filename: isPalindrome.cpp
 //
-//  Code Description: Determine a word(string) is a palindrome or not.
+//  Code Description: Determine a word(string) is a palindrome or not.git
 // 	Palindrom is a word/phrase reads the same from backward or forward
 //
 //  Created by brucederland on 08/08/19.
