@@ -10,8 +10,8 @@
 ************************************************************************/
 
 #include <iostream>
-#include <cstdlib>		/* rand() */
-#include <time.h>       /* time */
+#include <cstdlib> /* rand() */
+#include <time.h>  /* time */
 
 using namespace std;
 
@@ -23,7 +23,7 @@ int main()
 
 	/* Generate random number*/
 
-	srand(time(NULL));	/* seed by time */
+	srand(time(NULL)); /* seed by time */
 	for (int i = 0; i < 100; i++)
 	{
 		num[i] = rand() % 100 + 1;
@@ -49,10 +49,11 @@ int main()
 
 int smallestIndex(int num[])
 {
-	int smallestIndex = num[0];
+	int smallestIndex = num[0];		//assign the 1st element to keep check
 	for (int i = 0; i < 100; i++)
 	{
 		if (smallestIndex > num[i])
+		/* dont use num[i] > num[i+1] because this is not keeping checking the first element until it is bigger than the next element */
 		{
 			smallestIndex = num[i];
 		}
