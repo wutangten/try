@@ -1,8 +1,11 @@
 /************************************************************************
 //
-//  Filename: .cpp
+//  Filename: alpha50.cpp
 //
-//  Code Description: 
+//  Code Description: Perform two modification for 50 numbers.
+//	For the first 25-number: square it with the index.
+//	For the last 25-number: multiply the index by 3.
+//	Output 10-number per line.
 //
 //  Created by brucederland on 08/08/19.
 //
