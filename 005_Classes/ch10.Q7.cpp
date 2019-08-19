@@ -56,6 +56,7 @@ void bagType::print() const
 	cout << "Height: " << h << endl;
 	cout << "Cost: " << price << endl;
 }
+
 int main()
 {
 	/* Code */

@@ -35,6 +35,7 @@ romanType::romanType()
 void romanType::convert(string a){
 	for (int i = 0; i < a.length(); i++)
 	{
+		/* need to check 4th and 6th, they are "2-characters"*/
 		if (a[i] == 'M')
 		{
 			positiveNum= positiveNum + 1000;
