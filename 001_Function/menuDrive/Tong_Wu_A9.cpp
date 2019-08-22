@@ -1,3 +1,14 @@
+/************************************************************************
+//
+//  Filename: .cpp
+//
+//  Code Description:
+//		Practice file-operation and functions.
+//
+//  Updated by brucederland on 08/19/19.
+//
+************************************************************************/
+
 #include <iostream>
 #include <fstream>
 #include <string>

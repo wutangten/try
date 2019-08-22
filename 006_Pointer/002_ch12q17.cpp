@@ -49,7 +49,7 @@ int main()
 	}
 	cout << endl;
 
-	ptr++;
+	ptr++;	/* move to the 4th element (value of 14)*/
 	*ptr = 2 * (*ptr) - 3;
 	cout<<"After last line: ";
 	for (int i = 0; i < 7; i++)
