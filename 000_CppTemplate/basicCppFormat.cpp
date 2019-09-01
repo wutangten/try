@@ -1,12 +1,12 @@
 /************************************************************************
-//
-//  Filename: .cpp
-//
-//  Code Description:
-//		//Type here...//
-//
-//  Updated by brucederland on xx/xx/19.
-//
+
+	Filename: .cpp
+
+	Code Description:
+		//Type here...//
+
+	Updated by wutangten on xx/xx/19.
+
 ************************************************************************/
 
 #include <iostream> /* basic input output*/
