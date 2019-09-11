@@ -12,6 +12,7 @@ public:
 	void incMin();
 	void incSec();
 	string getTime() const;
+
 private:
 	int hr;
 	int min;
@@ -32,7 +33,7 @@ clockType::clockType(int h)
 
 	min = sec = 0;
 }
-	
+
 //constructor that sets the hr and min fields, sets sec to 0
 clockType::clockType(int h, int m)
 {
@@ -50,7 +51,7 @@ clockType::clockType(int h, int m)
 
 	sec = 0;
 }
-	
+
 //constructor that sets the hr, min, and sec fields
 clockType::clockType(int h, int m, int s)
 {
@@ -73,7 +74,7 @@ clockType::clockType(int h, int m, int s)
 
 	hr = (hr + carry) % 24;
 }
-	
+
 /******************************************
 FUNCTION: incHr
 PARAMETERS: None
@@ -103,7 +104,7 @@ void clockType::incMin()
 		incHr();
 	}
 }
-	
+
 /******************************************
 FUNCTION: incSec
 PARAMETERS: None
@@ -138,9 +139,9 @@ string clockType::getTime() const
 
 int main()
 {
-	clockType c1; //initializes c1 by calling default constructor
-	clockType c2(12); //initializes c2 by calling the constructor that takes in one argument
-	clockType c3(25, 61); //initializes c3 by calling the constructor that takes in two arguments
+	clockType c1;			  //initializes c1 by calling default constructor
+	clockType c2(12);		  //initializes c2 by calling the constructor that takes in one argument
+	clockType c3(25, 61);	 //initializes c3 by calling the constructor that takes in two arguments
 	clockType c4(13, 59, 62); //initializes c4 by calling the constructor that takes in three arguments
 
 	c1.incHr();
@@ -164,7 +165,7 @@ int main()
 	//initializes c6 by calling the copy constructor, clones c2 into c6 (similar to the assignment operator)
 	//the copy constructor is always given and will always copy all the data from the object passed into
 	//the constructor with the object that calls the constructor
-	clockType c6(c2); 
+	clockType c6(c2);
 
 	cout << "c6 = " << c6.getTime() << endl;
 
