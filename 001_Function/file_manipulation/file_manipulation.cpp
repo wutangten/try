@@ -1,11 +1,11 @@
 /************************************************************************
 //
-//  Filename: .cpp
+//  Filename: filemanipulation.cpp
 //
 //  Code Description:
-//		//Type here...//
+//		This program is a practice for file operation (writing on and reading from files).
 //
-//  Updated by wutangten on xx/xx/19.
+//  Updated by wutangten on 09/03/19.
 //
 ************************************************************************/
 

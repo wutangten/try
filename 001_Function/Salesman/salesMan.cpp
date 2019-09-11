@@ -1,3 +1,24 @@
+/************************************************************************
+
+	Filename: salesMan.cpp
+
+	Code Description:
+		This program calculates the final salary for a saleman.
+		1. Need to read the following:
+			1.1 The number of years have worked
+			1.2. Monthly salary
+			1.3. Sales amount of that month
+		2. Output the following
+			2.1. The base salary
+			2.2. The bonus
+			2.3. The Amount sold of that month
+			2.3. The final salary (base salary + bonus)
+			2.4. Ask the user about calculate for the next employee or not.
+
+
+	Updated by wutangten on 03/09/19.
+
+************************************************************************/
 #include <iostream>
 #include <iomanip>
 #include <ctype.h>
@@ -9,15 +30,19 @@ double incomeCheck(double), soldCheck(double);
 
 int main(int argc, const char *argv[])
 {
-	int years = 0;
-	char yesNo;
-	double monthIncome = 0, soldAmount = 0, bonus = 0, addBonus = 0;
-	const double fristBar = 0.03, secondBar = 0.06;
-	;
+	int years = 0; // Only count whole year, so use int-type instead of double-type.
+	char yesNo;	// Determine if the user like to continue
+	double		   // Money must use decimal so double-type.
+		monthIncome = 0,
+		soldAmount = 0,
+		bonus = 0,
+		addBonus = 0;
+	const double firstBar = 0.03, secondBar = 0.06; // For the calculate the comission.
 
 	//use do-while for at least one running
 	do
 	{
+		// Prompt
 		cout << "Enter years worked: ";
 		cin >> years;
 		years = yearsCheck(years);
@@ -38,7 +63,7 @@ int main(int argc, const char *argv[])
 		//math for additional commission
 		if (soldAmount > 5000 && soldAmount < 10000)
 		{
-			addBonus = soldAmount * fristBar;
+			addBonus = soldAmount * firstBar;
 		}
 		else if (soldAmount >= 10000)
 		{
@@ -48,13 +73,14 @@ int main(int argc, const char *argv[])
 		bonus = bonus + addBonus;
 		double FinalSalary = monthIncome + bonus;
 
-		//out and formatting
+		// Output and formatting
 		cout << left << setw(20) << "Years worked";
 		cout << setw(16) << setfill(' ') << right << years << endl;
 		cout << left << setw(20) << setfill('.') << "Base salary........."
 			 << "$";
 		cout << setw(15) << setfill(' ') << right << fixed << setprecision(2) << monthIncome << endl;
-		if (years > 0)
+
+		if (years > 0) // No bonus for employees who worked less than ONE-year.
 		{
 			cout << left << setw(20) << setfill('.') << "Bonus..............."
 				 << "$";
@@ -64,19 +90,20 @@ int main(int argc, const char *argv[])
 		cout << left << setw(20) << setfill('.') << "Amount sold........."
 			 << "$";
 		cout << setw(15) << setfill(' ') << right << fixed << setprecision(2) << soldAmount << endl;
-		if (years > 0)
+
+		if (years > 0) // No bonus for employees who worked less than ONE-year.
 		{
 			cout << left << setw(20) << setfill('.') << "Salary w/ bonus"
 				 << "$";
 			cout << setw(15) << setfill(' ') << right << fixed << setprecision(2) << FinalSalary << endl;
 		}
 
-		//use 2nd do-while to emilate input that is not Y
+		// Use 2nd do-while to emilate input that is not Y
 		cout << "Do we have more employees? (Y/N): ";
 		cin >> yesNo;
 		yesNo = keepGo(yesNo);
 
-	} while (yesNo == 'y' || yesNo == 'Y'); //will continue to start over if input is y or Y
+	} while (yesNo == 'y' || yesNo == 'Y'); // Restart the program if input is y or Y
 	return 0;
 }
 
@@ -121,7 +148,7 @@ double soldCheck(double soldAmount)
 	return soldAmount;
 }
 
-//for continue
+//	Asking user to restart or not.
 char keepGo(char yesNo)
 {
 	while (yesNo != 'y' && yesNo != 'Y')

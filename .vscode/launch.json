@@ -13,7 +13,7 @@
 			"name": "(lldb) Launch",
 			"type": "cppdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/classNumber.out", //IMPORTANT: make sure the .out file matches the .out file in task
+			"program": "${workspaceFolder}/3.0_sumofArray.out", //IMPORTANT: make sure the .out file matches the .out file in task
 			"args": [],
 			"stopAtEntry": true,
 			"cwd": "${workspaceFolder}",

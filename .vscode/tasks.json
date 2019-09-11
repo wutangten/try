@@ -8,9 +8,9 @@
 			"args": [
 				"-std=c++17",
 				"-stdlib=libc++",
-				"classNumber.cpp",
+				"3.0_sumofArray.cpp",
 				"-o",
-				"classNumber.out",
+				"3.0_sumofArray.out",
 				"--debug"
 			],
 			"group": {

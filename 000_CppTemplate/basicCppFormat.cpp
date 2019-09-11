@@ -13,6 +13,12 @@
 
 using namespace std;
 
+/****************************************************
+	Function Name:
+	Parameters:
+	Return Type:
+	Description:
+****************************************************/
 int main()
 {
 	/* Code */
