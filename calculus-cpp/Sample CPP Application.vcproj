@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="Sample CPP Application"
+	ProjectGUID="{9B2D47D8-4D60-4571-93DE-BF9D00189815}"
+	Keyword="MakeFileProj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="Debug"
+			IntermediateDirectory="Debug"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="nmake DEBUG=1 cpp_sample"
+				ReBuildCommandLine="nmake rebuild DEBUG=1 cpp_sample"
+				CleanCommandLine="nmake clean DEBUG=1 cpp_sample"
+				Output=".\BIN\cppdemod.exe"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="nmake RELEASE=1 cpp_sample"
+				ReBuildCommandLine="nmake rebuild RELEASE=1 cpp_sample"
+				CleanCommandLine="nmake clean RELEASE=1 cpp_sample"
+				Output=".\BIN\cppdemo.exe"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm">
+			<File
+				RelativePath="SRC\Samples\cpp\ClientApp.cpp">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

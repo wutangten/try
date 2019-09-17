@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="Calculus Compiler"
+	ProjectGUID="{110B658B-A83D-4192-9F05-7C967A5F8195}"
+	Keyword="MakeFileProj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="Debug"
+			IntermediateDirectory="Debug"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="nmake DEBUG=1 compiler"
+				ReBuildCommandLine="nmake rebuild DEBUG=1 compiler"
+				CleanCommandLine="nmake clean DEBUG=1 compiler"
+				Output=".\BIN\calccd.exe"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release"
+			ConfigurationType="0">
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="nmake RELEASE=1 compiler"
+				ReBuildCommandLine="nmake rebuild RELEASE=1 compiler"
+				CleanCommandLine="nmake clean RELEASE=1 compiler"
+				Output=".\BIN\calcc.exe"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm">
+			<File
+				RelativePath="SRC\Compiler\ClientCompilerApp.cpp">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

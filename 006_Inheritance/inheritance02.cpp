@@ -71,7 +71,7 @@ void rectangle::set_dimensions_rectangle(double l, double h)
 	and call parallelogram's set_dimensions function
 	Note: the number of parameter is different(3 in the heading) and (2 in the function-call), but it will still work
 	*/
-	parallelogram::set_dimensions(l, h, h);
+	parallelogram::set_dimensions(l, h, h);	// function override
 }
 
 double rectangle::get_area_rectangle() const

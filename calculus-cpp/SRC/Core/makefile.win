@@ -1,0 +1,266 @@
+#
+#MAKEFILE.WIN: WINDOWS ROOT MAKEFILE
+#
+#This makefile is designed to build the source tree using NMAKE.  Do
+#not invoke this makefile directly, rather invoke the "makefile" makefile
+#which is designed to work both with NMAKE and GNU MAKE.
+#
+#* calculus-cpp: Scientific "Functional" Library
+#*
+#* This software was developed at McGill University (Montreal, 2002) by
+#* Olivier Giroux in the course of his studies in Mechanical Engineering.
+#* It was presented, along with an accompanying paper, for credit in the fall
+#* of 2002.
+#*
+#* Calculus-cpp was not designed to prove a point or to serve as a formal
+#* framework within which exact solutions can be derived.  Instead it was
+#* created to fill the need for run-time functional constructions and to
+#* accomplish very real and tangible goals.  It remains your responsibility
+#* to use it properly - as much more sophisticated <math.h>, which allows
+#* functions to be treated as first-class objects.
+#*
+#* You are welcome to make any additions you feel are necessary.
+#
+#COPYRIGHT AND PERMISSION NOTICE
+#
+#Copyright (c) 2002, Olivier Giroux, <oliver@canada.com>.
+#
+#All rights reserved.
+#
+#Permission is hereby granted, free of charge, to any person obtaining a copy
+#of this software and associated documentation files (the "Software"), to deal
+#in the Software without any restriction, including without limitation the rights
+#to use, copy, modify, merge, publish, distribute, and/or sell copies of the
+#Software, and to permit persons to whom the Software is furnished to do so,
+#provided that the copyright notice(s) and this permission notice appear
+#in all copies of the Software.
+#
+#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY RIGHTS. IN
+#NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS NOTICE BE
+#LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL DAMAGES, OR ANY
+#DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+#ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+#CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+#
+#Except as contained in this notice, the name of a copyright holder shall not
+#be used in advertising or otherwise to promote the sale, use or other dealings
+#in this Software without prior written authorization of the copyright holder.
+#
+#THIS SOFTWARE INCLUDES THE NIST'S TNT PACKAGE FOR USE WITH THE EXAMPLES FURNISHED.
+#
+#THE FOLLOWING NOTICE APPLIES SOLELY TO THE TNT-->
+#* Template Numerical Toolkit (TNT): Linear Algebra Module
+#*
+#* Mathematical and Computational Sciences Division
+#* National Institute of Technology,
+#* Gaithersburg, MD USA
+#*
+#*
+#* This software was developed at the National Institute of Standards and
+#* Technology (NIST) by employees of the Federal Government in the course
+#* of their official duties. Pursuant to title 17 Section 105 of the
+#* United States Code, this software is not subject to copyright protection
+#* and is in the public domain. NIST assumes no responsibility whatsoever for
+#* its use by other parties, and makes no guarantees, expressed or implied,
+#* about its quality, reliability, or any other characteristic.
+#<--END NOTICE
+#
+#THE FOLLOWING NOTICE APPLIES SOLELY TO LEMON-->
+#** Copyright (c) 1991, 1994, 1997, 1998 D. Richard Hipp
+#**
+#** This file contains all sources (including headers) to the LEMON
+#** LALR(1) parser generator.  The sources have been combined into a
+#** single file to make it easy to include LEMON as part of another
+#** program.
+#**
+#** This program is free software; you can redistribute it and/or
+#** modify it under the terms of the GNU General Public
+#** License as published by the Free Software Foundation; either
+#** version 2 of the License, or (at your option) any later version.
+#**
+#** This program is distributed in the hope that it will be useful,
+#** but WITHOUT ANY WARRANTY; without even the implied warranty of
+#** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#** General Public License for more details.
+#** 
+#** You should have received a copy of the GNU General Public
+#** License along with this library; if not, write to the
+#** Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+#** Boston, MA  02111-1307, USA.
+#**
+#** Author contact information:
+#**   drh@acm.org
+#**   http://www.hwaci.com/drh/
+#<--END NOTICE
+#
+CORENAME=Core
+
+CORE_RELEASE_BUILDDIR=$(RELEASE_BUILDDIR)$(DIR)$(CORENAME)
+
+CORE_DEBUG_BUILDDIR=$(DEBUG_BUILDDIR)$(DIR)$(CORENAME)
+
+CORE_RELEASE_OBJS = \
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CAddition.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)Calculus.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CAlgebraic.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CAlgebraParser.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CArcCosh.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CArcCosine.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CArcSine.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CArcSinh.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CArcTangent.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CArcTanh.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CBesselJ0.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CBesselJ1.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CBesselJn.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CBesselY0.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CBesselY1.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CBesselYn.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CBinaryOperator.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CConstant.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CCosh.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CCosine.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CDerivative.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CDivision.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CExponential.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CExponentiation.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CFunction.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CIntegerPower.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CLn.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CLog10.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CMultiplication.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CNegate.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CNop.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CPolyFunction.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CSine.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CSinh.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CSquareRoot.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CSubtraction.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CTangent.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CTanh.obj"\
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CVariable.obj"
+
+CORE_DEBUG_OBJS =\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CAddition.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)Calculus.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CAlgebraic.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CAlgebraParser.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CArcCosh.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CArcCosine.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CArcSine.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CArcSinh.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CArcTangent.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CArcTanh.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CBesselJ0.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CBesselJ1.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CBesselJn.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CBesselY0.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CBesselY1.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CBesselYn.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CBinaryOperator.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CConstant.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CCosh.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CCosine.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CDerivative.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CDivision.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CExponential.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CExponentiation.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CFunction.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CIntegerPower.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CLn.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CLog10.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CMultiplication.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CNegate.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CNop.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CPolyFunction.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CSine.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CSinh.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CSquareRoot.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CSubtraction.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CTangent.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CTanh.obj"\
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CVariable.obj"
+
+CORE_NAME=calculus
+CORE_DEBUG_NAME=$(CORE_NAME)d
+CORE_RELEASE_NAME=$(CORE_NAME)
+CORE_DEBUG_PDB_NAME="$(CORE_DEBUG_BUILDDIR)$(DIR)$(CORE_DEBUG_NAME).pdb"
+
+!IFDEF STRICT
+CORE_CPPFLAGS=/nologo /I "$(INCDIR)" /GR /c /D "WIN32" /D "_LIB" /D "_MBCS" /W4 /WX /TP /GX
+!ELSE
+CORE_CPPFLAGS=/nologo /I "$(INCDIR)" /GR /c /D "WIN32" /D "_LIB" /D "_MBCS" /TP /GX
+!ENDIF
+
+CORE_DEBUGCPPFLAGS = $(CORE_CPPFLAGS) /Od /D "_DEBUG" /Fd$(CORE_DEBUG_PDB_NAME) /Zi /RTC1
+!IFDEF RELEASE_DEBUG
+CORE_RELEASECPPFLAGS = $(CORE_CPPFLAGS) /GB /Ox /Zi
+!ELSE
+CORE_RELEASECPPFLAGS = $(CORE_CPPFLAGS) /GB /Ox
+!ENDIF
+
+CORE_CFLAGS=/nologo /I "$(INCDIR)" /c /D "WIN32" /D "_LIB" /D "_MBCS" /W4 /WX /TC
+CORE_DEBUGCFLAGS = $(CORE_CFLAGS) /Od /D "_DEBUG" /Fd$(CORE_DEBUG_PDB_NAME) /Zi /RTC1
+!IFDEF RELEASE_DEBUG
+CORE_RELEASECFLAGS = $(CORE_CFLAGS) /GB /Ox /Zi
+!ELSE
+CORE_RELEASECFLAGS = $(CORE_CFLAGS) /GB /Ox
+!ENDIF
+
+CORE_LIB_FLAGS = /NODEFAULTLIB
+CORE_DEBUG_LIB_FLAGS = $(LIB_FLAGS)
+CORE_RELEASE_LIB_FLAGS = $(LIB_FLAGS)
+
+IMPORTANT_DEPENDENCIES :	"$(INCDIR)$(DIR)calculus.h"          \
+                            "$(INCDIR)$(DIR)calculus_cpp.h"
+
+"$(LIBDIR)$(DIR)$(CORE_DEBUG_NAME).lib" :   "$(SRCDIR)$(DIR)$(CORENAME)$(DIR)makefile.win"\
+											"$(CORE_DEBUG_BUILDDIR)"   \
+                                            $(CORE_DEBUG_OBJS)          \
+                                            "$(LIBDIR)"
+	lib /OUT:"$(CORE_DEBUG_BUILDDIR)$(DIR)$(CORE_DEBUG_NAME).lib" $(CORE_DEBUG_LIB_FLAGS) $(CORE_DEBUG_OBJS)
+	$(CP) "$(CORE_DEBUG_BUILDDIR)$(DIR)$(CORE_DEBUG_NAME).lib" "$(LIBDIR)\"
+	$(CP) $(CORE_DEBUG_PDB_NAME) "$(LIBDIR)\"
+	@echo Build of $(CORE_DEBUG_NAME).lib finished successfully
+
+"$(CORE_DEBUG_BUILDDIR)" :
+	if not exist "$(CORE_DEBUG_BUILDDIR)" md "$(CORE_DEBUG_BUILDDIR)"
+
+"$(LIBDIR)$(DIR)$(CORE_RELEASE_NAME).lib" :   "$(SRCDIR)$(DIR)$(CORENAME)$(DIR)makefile.win"\
+										      "$(CORE_RELEASE_BUILDDIR)" \
+                                              $(CORE_RELEASE_OBJS)        \
+                                              "$(LIBDIR)"
+	lib /OUT:"$(CORE_RELEASE_BUILDDIR)$(DIR)$(CORE_RELEASE_NAME).lib" $(CORE_RELEASE_LIB_FLAGS) $(CORE_RELEASE_OBJS)
+	$(CP) "$(CORE_RELEASE_BUILDDIR)$(DIR)$(CORE_RELEASE_NAME).lib" "$(LIBDIR)\"
+	@echo Build of $(CORE_RELEASE_NAME).lib finished successfully
+
+"$(CORE_RELEASE_BUILDDIR)" :
+	if not exist "$(CORE_RELEASE_BUILDDIR)" md "$(CORE_RELEASE_BUILDDIR)"
+
+#RELEASE INFERENCE RULES#############################
+"$(CORE_RELEASE_BUILDDIR)$(DIR)CAlgebraParser.obj" :   IMPORTANT_DEPENDENCIES              \
+                                                        "$(INCDIR)$(DIR)calculus_grammar.c"
+	$(CPP) $(CORE_RELEASECPPFLAGS) /Fo"$(CORE_RELEASE_BUILDDIR)$(DIR)CAlgebraParser.obj" "$(SRCDIR)$(DIR)core$(DIR)CAlgebraParser.cpp"
+	
+{$(SRCDIR)$(DIR)core}.cpp{$(CORE_RELEASE_BUILDDIR)}.obj :
+	$(CPP) $(CORE_RELEASECPPFLAGS) /Fo$@ $<
+
+{$(BUILDDIR)}.c{$(CORE_RELEASE_BUILDDIR)}.obj :
+	$(CC) $(CORE_RELEASECFLAGS) /w /Fo$@ $<
+
+$(CORE_RELEASE_OBJS): IMPORTANT_DEPENDENCIES
+
+#DEBUG INFERENCE RULES###############################
+"$(CORE_DEBUG_BUILDDIR)$(DIR)CAlgebraParser.obj" : IMPORTANT_DEPENDENCIES              \
+                                                    "$(INCDIR)$(DIR)calculus_grammar.c"
+	$(CPP) $(CORE_DEBUGCPPFLAGS) /Fo"$(CORE_DEBUG_BUILDDIR)$(DIR)CAlgebraParser.obj" "$(SRCDIR)$(DIR)core$(DIR)CAlgebraParser.cpp"
+
+{$(SRCDIR)$(DIR)Core}.cpp{$(CORE_DEBUG_BUILDDIR)}.obj :
+	$(CPP) $(CORE_DEBUGCPPFLAGS) /Fo$@ $<
+
+{$(BUILDDIR)}.c{$(CORE_DEBUG_BUILDDIR)}.obj :
+	$(CC) $(CORE_DEBUGCFLAGS) /w /Fo$@ $<
+
+$(CORE_DEBUG_OBJS): IMPORTANT_DEPENDENCIES

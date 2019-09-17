@@ -1,0 +1,36 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Calculus Core", "Calculus Core.vcproj", "{673732B8-02EF-4873-A1F9-77B2C174D180}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample CPP Application", "Sample CPP Application.vcproj", "{9B2D47D8-4D60-4571-93DE-BF9D00189815}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Calculus Compiler", "Calculus Compiler.vcproj", "{110B658B-A83D-4192-9F05-7C967A5F8195}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{673732B8-02EF-4873-A1F9-77B2C174D180}.Debug.ActiveCfg = Debug|Win32
+		{673732B8-02EF-4873-A1F9-77B2C174D180}.Debug.Build.0 = Debug|Win32
+		{673732B8-02EF-4873-A1F9-77B2C174D180}.Release.ActiveCfg = Release|Win32
+		{673732B8-02EF-4873-A1F9-77B2C174D180}.Release.Build.0 = Release|Win32
+		{9B2D47D8-4D60-4571-93DE-BF9D00189815}.Debug.ActiveCfg = Debug|Win32
+		{9B2D47D8-4D60-4571-93DE-BF9D00189815}.Debug.Build.0 = Debug|Win32
+		{9B2D47D8-4D60-4571-93DE-BF9D00189815}.Release.ActiveCfg = Release|Win32
+		{9B2D47D8-4D60-4571-93DE-BF9D00189815}.Release.Build.0 = Release|Win32
+		{110B658B-A83D-4192-9F05-7C967A5F8195}.Debug.ActiveCfg = Debug|Win32
+		{110B658B-A83D-4192-9F05-7C967A5F8195}.Release.ActiveCfg = Release|Win32
+		{110B658B-A83D-4192-9F05-7C967A5F8195}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
