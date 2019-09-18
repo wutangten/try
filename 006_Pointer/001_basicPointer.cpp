@@ -9,10 +9,10 @@
 #include <iostream>
 using namespace std;
 
-int main(int argc, const char *argv[])
+int main()
 {
-	// insert code here...
-	int *pa, a = 10, b; //*pa means pointer of a
+
+/*	int *pa, a = 10, b; //*pa means pointer of a
 
 	cout << "The current value of a is " << &a << endl; //a current address
 
@@ -32,6 +32,6 @@ int main(int argc, const char *argv[])
 	cout << "The current value of pa is " << pa << endl;
 	cout << "The current address of pa is " << &pa << endl;
 	//you can chanege
-
+*/
 	return 0;
 }
