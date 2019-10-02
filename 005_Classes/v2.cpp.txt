@@ -1,0 +1,140 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class clockType
+{
+public:
+	//default constructor, sets all fields to default values, i.e sets all fields to 0
+	clockType()
+	{
+		hr = min = sec = 0;
+	}
+
+	//constructor that takes in 1 integer, sets the hr field with this value
+	clockType(int h)
+	{
+		hr = h;
+		hr = hr % 24; //ensures hr will not exceed 23
+
+		min = sec = 0;
+	}
+
+	//constructor that takes in 2 integer, and sets hr with the first parameter and min with
+	//the second parameter
+	clockType(int h, int m)
+	{
+		int carry;
+
+		hr = h % 24; //checks for over 23
+
+		//computes the overflow for the minute amount
+		carry = m / 60;
+		min = m % 60;
+
+		//adds that amount to hr and makes sure hr is not over 23
+		hr = hr + carry;
+		hr = hr % 24;
+
+		sec = 0;
+	}
+
+	//constructor that takes in 3 integer parameters, sets hr with the first parameter,
+	//sets min with the second parameter, and sets sec with the third parameter,
+	//also cleans up any overflows
+	clockType(int h, int m, int s)
+	{
+		int carry;
+
+		hr = h % 24;
+
+		carry = m / 60;
+		min = m % 60;
+
+		hr = (hr + carry) % 24;
+
+		carry = s / 60;
+		sec = s % 60;
+
+		min = min + carry;
+
+		carry = min / 60;
+		min = min % 60;
+
+		hr = (hr + carry) % 24;
+	}
+
+	//increments hr by 1 of the object that called the function and handles overflow
+	void incHr()
+	{
+		hr = (hr + 1) % 24;
+	}
+
+	//increments min of the object that called the function, this function also calls the same
+	//object's incHr() function if min reaches 60 after incrementing the min field
+	void incMin()
+	{
+		min++;
+
+		if (min == 60)
+		{
+			min = 0;
+			incHr();
+		}
+	}
+
+	//increments sec of the object that called the function, this function also calls the same
+	//object's incMin() function if sec reaches 60 after incrementing the sec field
+	void incSec()
+	{
+		sec++;
+
+		if (sec == 60)
+		{
+			sec = 0;
+			incMin();
+		}
+	}
+	
+	//returns the objects time info in the form, hr:min:sec as one long string
+	//the to_string() function is used that converts an integer into a string
+	//and concatenates all the strings into one large string
+	string getTime() const
+	{
+		return to_string(hr) + ":" + to_string(min) + ":" + to_string(sec);
+	}
+private:
+	int hr;
+	int min;
+	int sec;
+};
+
+int main()
+{
+	clockType c1; //initializes c1 by calling default constructor
+	clockType c2(12); //initializes c2 by calling the constructor that takes in one argument
+	clockType c3(25, 61); //initializes c3 by calling the constructor that takes in two arguments
+	clockType c4(13, 59, 62); //initializes c4 by calling the constructor that takes in three arguments
+
+	//outputs each clock objects time, each object calls its getTime() function which returns
+	//a string which is output since it's used in a cout output expression
+	cout << "c1 = " << c1.getTime() << endl;
+	cout << "c2 = " << c2.getTime() << endl;
+	cout << "c3 = " << c3.getTime() << endl;
+	cout << "c4 = " << c4.getTime() << endl;
+
+	clockType c5; //initializes c5 by calling the default constructor
+
+	c5 = c3; //since c5 and c3 are of the same time, this will copy all the data from c3 into c5
+
+	cout << "c5 = " << c5.getTime() << endl;
+
+	//initializes c6 by calling the copy constructor, clones c2 into c6 (similar to the assignment operator)
+	//the copy constructor is always given and will always copy all the data from the object passed into
+	//the constructor with the object that calls the constructor
+	clockType c6(c2); 
+
+	cout << "c6 = " << c6.getTime() << endl;
+
+	return 0;
+}

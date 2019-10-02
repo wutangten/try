@@ -1,0 +1,125 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class clockType
+{
+public:
+	//function that sets the hr field for an object that calls the function
+	void setTime(int h)
+	{
+		hr = h;
+		hr = hr % 24; //prevents the hr field to contain anything over 23
+
+		min = sec = 0;
+	}
+
+	//function that sets the hr and min field for the object that calls the function
+	void setTime(int h, int m)
+	{
+		int carry;
+
+		hr = h % 24; //prevents the hr field to contain anything over 23
+
+		carry = m / 60; //checks if m is over 60
+		min = m % 60; //prevents min from being over 60
+
+		hr = hr + carry; //adds the amount to hr if min exceeds 60
+		hr = hr % 24;
+
+		sec = 0;
+	}
+
+	//function that sets the hr, min, and sec field for the object that calls the function
+	void setTime(int h, int m, int s)
+	{
+		int carry;
+
+		hr = h % 24; //prevents hr from being over 23
+
+		carry = m / 60; //checks if m exceeds 59
+		min = m % 60; //prevents min from begin over 59
+
+		hr = (hr + carry) % 24; //adds the min overflow to hr
+
+		//checks if s exceeds 59
+		carry = s / 60;
+		sec = s % 60;
+
+		//adds the overflow to the min and hr field
+		min = min + carry;
+
+		carry = min / 60;
+		min = min % 60;
+
+		hr = (hr + carry) % 24;
+	}
+
+	//function that increments hr field of the object that called the function
+	//and ensures its value will not exceed 23
+	void incHr()
+	{
+		hr = (hr + 1) % 24;
+	}
+
+	//function that increments min field of the object that called the function
+	//and ensures its value will not exceed 59
+	void incMin()
+	{
+		min++;
+
+		if (min == 60)
+		{
+			min = 0;
+			incHr();
+		}
+	}
+
+	//function that increments sec field of the object that called the function
+	//and ensures its value will not exceed 59
+	void incSec()
+	{
+		sec++;
+
+		if (sec == 60)
+		{
+			sec = 0;
+			incMin();
+		}
+	}
+	
+	//prints out the hr, min, and sec of the object that called the function
+	void printTime() const
+	{
+		cout << hr << ":" << min << ":" << sec << endl;
+	}
+private:
+	int hr;
+	int min;
+	int sec;
+};
+
+int main()
+{
+	clockType c1, c2, c3;
+
+	c3.setTime(18); //calls c3's setTime function (the version that has 1 int formal parameter)
+	c2.setTime(17, 51); //calls c2's setTime function (the version that has 2 int formal parameters)
+	c1.setTime(17, 49, 3); //calls c1's setTime function (the version that has 3 int formal parameters)
+
+	//prints each clock object
+	c1.printTime();
+	c2.printTime();
+	c3.printTime();
+
+	c1.incHr(); //increments c1's hr field
+	c2.incMin(); //increments c2's min field
+	c3.incSec(); //increments c3's sec field
+
+	//prints each clock object
+	c1.printTime();
+	c2.printTime();
+	c3.printTime();
+
+	return 0;
+}

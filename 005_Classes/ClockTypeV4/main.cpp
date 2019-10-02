@@ -17,9 +17,9 @@ int main()
 	//creates an array of 5 clockType objects
 	//assigns an unamed clockType object to
 	//each element of the array
-	clockType moreClocks[] = { clockType(), 
-			clockType(12), clockType(13, 45, 1),
-			clockType(23, 56), clockType() };
+	clockType moreClocks[] = {clockType(),
+							  clockType(12), clockType(13, 45, 1),
+							  clockType(23, 56), clockType()};
 
 	cout << endl;
 
@@ -32,8 +32,8 @@ int main()
 
 	//reassigns each element to an new unamed clockTpe object
 	for (int i = 0; i < 5; i++)
-		evenMoreClocks[i] = clockType(rand() % 24, 
-					rand() % 60, rand() % 60);
+		evenMoreClocks[i] = clockType(rand() % 24,
+									  rand() % 60, rand() % 60);
 
 	cout << endl;
 

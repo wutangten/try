@@ -18,15 +18,15 @@ int main()
 	/* Code */
 	int list[7] = {10, 8, 15, 14, 16, 24, 36};
 	int *ptr = list;
-	cout<<"The original array: ";
+	cout << "The original array: ";
 	for (int i = 0; i < 7; i++)
 	{
 		cout << list[i] << " ";
 	}
-	cout<<endl;
-	
+	cout << endl;
+
 	*ptr = *ptr + 2;
-	cout<<"After first line: ";
+	cout << "After first line: ";
 	for (int i = 0; i < 7; i++)
 	{
 		cout << list[i] << " ";
@@ -34,7 +34,7 @@ int main()
 	cout << endl;
 
 	ptr = ptr + 2;
-	cout<<"After second line: ";
+	cout << "After second line: ";
 	for (int i = 0; i < 7; i++)
 	{
 		cout << list[i] << " ";
@@ -42,16 +42,16 @@ int main()
 	cout << endl;
 
 	*ptr = (*ptr) - *(ptr - 1);
-	cout<<"After third line: ";
+	cout << "After third line: ";
 	for (int i = 0; i < 7; i++)
 	{
 		cout << list[i] << " ";
 	}
 	cout << endl;
 
-	ptr++;	/* move to the 4th element (value of 14)*/
+	ptr++; /* move to the 4th element (value of 14)*/
 	*ptr = 2 * (*ptr) - 3;
-	cout<<"After last line: ";
+	cout << "After last line: ";
 	for (int i = 0; i < 7; i++)
 	{
 		cout << list[i] << " ";

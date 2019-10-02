@@ -23,9 +23,12 @@ int main()
 	string text;
 	// char* textArray[text.length()];	// static array
 
-	char* textArray;	/* Initialize pointer variable */
+	char *textArray; /* Initialize pointer variable */
 
-	textArray = new char[text.length()]; /* Make it as dynamic array */
+	/* 	Make it as dynamic array 
+		Syntax: pointer-variable = new dataType [index]
+	*/
+	textArray = new char[text.length()];
 
 	cout << "Enter a string" << endl;
 	cin >> text;
@@ -40,9 +43,9 @@ int main()
 	for (int i = 0; i < text.length(); i++)
 	{
 		//cout << toupper(textArray[i]);	/* this will print number only */
-		cout << (char)toupper(textArray[i]);	/* 1st correct way */
-		//putchar(toupper(textArray[i]));			/* 2nd correct way*/
+		cout << (char)toupper(textArray[i]); /* 1st correct way */
+											 //putchar(toupper(textArray[i]));			/* 2nd correct way*/
 	}
 
-	delete []textArray;		/* Free the memory */
+	delete[] textArray; /* Free the memory */
 }

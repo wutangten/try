@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+  int ** twoD;
+  
+  twoD = new int*[4]; //array of pointer, this will represent the number of rows
+  
+  for (int i = 0; i < 4; i++)
+    twoD[i] = new int[5]; //assign a column amount to each row
+  
+  for (int i = 0; i < 4; i++)
+    for (int j = 0; j < 5; j++)
+      twoD[i][j] = rand() % 15 + 1;
+  
+  //resize the 2D array
+  
+  //create temporary larger 2D array
+  int ** tmp;
+  
+  //we create a 7 x 5 array
+  tmp = new int*[7];
+  
+  for (int i = 0; i < 7; i++)
+    tmp[i] = new int[5];
+  
+  for (int i = 0; i < 4; i++)
+    for (int j = 0; j < 5; j++)
+      tmp[i][j] = twoD[i][j];
+  
+  //twoD is now obsolete
+  
+  for (int i = 0; i < 4; i++)
+    delete [] twoD[i];
+  delete [] twoD;
+  
+  twoD = tmp; //now twoD is resized
+  
+  tmp = NULL;
+  
+  return 0;
+}
